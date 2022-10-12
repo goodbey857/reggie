@@ -10,6 +10,8 @@ import top.kingdon.reggie.entity.Category;
 import top.kingdon.reggie.entity.R;
 import top.kingdon.reggie.service.CategoryService;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/category")
@@ -45,5 +47,13 @@ public class CategoryController {
     public R<String>update(@RequestBody Category category){
         categoryService.updateById(category);
         return R.success("更新分类信息成功");
+    }
+    @GetMapping("/list")
+    public R<List<Category>> list(Category category){
+        LambdaQueryWrapper<Category> queryWrapper = new LambdaQueryWrapper<Category>();
+        queryWrapper.eq(category.getType()!=null,Category::getType,category.getType());
+        List<Category> list = categoryService.list(queryWrapper);
+        return R.success(list);
+
     }
 }

@@ -2,6 +2,7 @@ package top.kingdon.reggie.service;
 
 import top.kingdon.reggie.entity.Dish;
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.kingdon.reggie.entity.DishDto;
 
 /**
 * @author 古德白
@@ -9,5 +10,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 * @createDate 2022-10-11 20:16:11
 */
 public interface DishService extends IService<Dish> {
-
+    void saveWithFlavors(DishDto dishDto);
 }
