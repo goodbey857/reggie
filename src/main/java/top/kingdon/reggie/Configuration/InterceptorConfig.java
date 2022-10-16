@@ -18,7 +18,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 excludePathPatterns("/front/page/login.html");     //不被拦截的目录
 
         registry.addInterceptor(new AdminLoginInterceptor())
-                .addPathPatterns("/*","/backend/page/**","/backend/index.html")
+                .addPathPatterns("/*","/backend/page/**","/backend/index.html","/dish/**")
                 .excludePathPatterns("/backend/page/login/login.html","/employee/login");
 
     }

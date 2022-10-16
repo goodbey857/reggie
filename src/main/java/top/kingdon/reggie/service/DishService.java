@@ -11,4 +11,6 @@ import top.kingdon.reggie.entity.DishDto;
 */
 public interface DishService extends IService<Dish> {
     void saveWithFlavors(DishDto dishDto);
+    DishDto getByIdWithDishFlavor(Long id);
+    void updateWithDishFlavor(DishDto dishDto);
 }

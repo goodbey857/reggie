@@ -2,6 +2,7 @@ package top.kingdon.reggie.service;
 
 import top.kingdon.reggie.entity.Setmeal;
 import com.baomidou.mybatisplus.extension.service.IService;
+import top.kingdon.reggie.entity.SetmealDto;
 
 /**
 * @author 古德白
@@ -10,4 +11,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface SetmealService extends IService<Setmeal> {
 
+    void saveWithDish(SetmealDto setmealDto);
+
+    SetmealDto getByIdWithDish(Long id);
+
+    void updateWithDish(SetmealDto setmealDto);
 }
