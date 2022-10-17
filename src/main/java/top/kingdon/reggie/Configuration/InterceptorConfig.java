@@ -14,7 +14,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor())     //添加拦截器
-                .addPathPatterns("/front/page/**").   //要拦截的目录
+                .addPathPatterns("/front/page/**","/shoppingCart/*","/*","/front/index.html").   //要拦截的目录
                 excludePathPatterns("/front/page/login.html");     //不被拦截的目录
 
         registry.addInterceptor(new AdminLoginInterceptor())

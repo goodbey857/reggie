@@ -15,6 +15,7 @@ public class AdminLoginInterceptor implements HandlerInterceptor {
     @Override       //处理请求前执行的方法
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         Long empId = (Long) request.getSession().getAttribute("employee");
+        if(request.getSession().getAttribute("user")!=null)return true;
         if(empId==null){
 
             request.setAttribute("msg","用户未登录");
